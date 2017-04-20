@@ -5,6 +5,8 @@
   "main": "dist/speedstar-react-router.js",
   "dependencies": {},
   "peerDependencies": {
+    "react": "^15.5.4",
+    "react-router-dom": "^4.1.1",
     "speedstar": "^1.0.0"
   },
   "devDependencies": {
