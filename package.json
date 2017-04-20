@@ -1,10 +1,9 @@
 {
   "name": "speedstar-react-router",
   "version": "1.0.0",
-  "description": "",
+  "description": "React router binding for speedstar",
   "main": "dist/speedstar-react-router.js",
-  "dependencies": {
-  },
+  "dependencies": {},
   "peerDependencies": {
     "speedstar": "^1.0.0"
   },
@@ -23,5 +22,13 @@
   },
   "keywords": [],
   "author": "Dominik Burgdörfer <db@domachine.de> (https://domachine.de/)",
-  "license": "MIT"
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/domachine/speedstar-react-router.git"
+  },
+  "bugs": {
+    "url": "https://github.com/domachine/speedstar-react-router/issues"
+  },
+  "homepage": "https://github.com/domachine/speedstar-react-router#readme"
 }
