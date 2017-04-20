@@ -1,0 +1,27 @@
+{
+  "name": "speedstar-react-router",
+  "version": "1.0.0",
+  "description": "",
+  "main": "dist/speedstar-react-router.js",
+  "dependencies": {
+  },
+  "peerDependencies": {
+    "speedstar": "^1.0.0"
+  },
+  "devDependencies": {
+    "babel-plugin-external-helpers": "^6.22.0",
+    "babel-preset-es2015": "^6.24.1",
+    "babel-preset-react": "^6.24.1",
+    "react": "^15.5.4",
+    "react-router-dom": "^4.1.1",
+    "rollup-plugin-babel": "^2.7.1",
+    "rollup": "^0.41.6"
+  },
+  "scripts": {
+    "test": "standard",
+    "prepublishOnly": "mkdir -p dist && rollup -c rollup.config.js -i src/speedstar-react-router.js -o dist/speedstar-react-router.js"
+  },
+  "keywords": [],
+  "author": "Dominik Burgdörfer <db@domachine.de> (https://domachine.de/)",
+  "license": "MIT"
+}
