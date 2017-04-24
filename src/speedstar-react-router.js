@@ -10,15 +10,19 @@ class PageLoader extends Component {
   }
 
   componentDidMount () {
-    const { app, page, location } = this.props
-    if (page) return
-    boot(app, location.pathname, (page, pageObject) => {
-      this.setState({ page: pageObject })
-    })
+    const { app, page, pageName, location } = this.props
+    if (page && page.name === pageName) {
+      this.setState({ page })
+    } else {
+      boot(app, location.pathname, (page, pageObject) => {
+        this.setState({ page: pageObject })
+      })
+    }
   }
 
   componentWillReceiveProps ({ app, location }) {
     if (location !== this.props.location) {
+      this.setState({ page: null })
       boot(app, location.pathname, (page, pageObject) => {
         this.setState({ page: pageObject })
       })
@@ -54,7 +58,7 @@ export default function App (ownProps) {
               strict
               path={`/${page.replace(/(^|\/)index$/, '$1')}`}
               render={props => (
-                <PageLoader app={ownProps.app} page={ownProps.page}>
+                <PageLoader app={ownProps.app} page={ownProps.page} pageName={page} {...props}>
                   <Template {...props} {...ownProps} page={page} />
                 </PageLoader>
               )}
