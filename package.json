@@ -1,6 +1,6 @@
 {
   "name": "speedstar-react-router",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "React router binding for speedstar",
   "main": "dist/speedstar-react-router.js",
   "dependencies": {},
