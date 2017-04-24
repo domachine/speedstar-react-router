@@ -7,7 +7,7 @@
   "peerDependencies": {
     "react": "^15.5.4",
     "react-router-dom": "^4.1.1",
-    "speedstar": "^1.0.0"
+    "speedstar": "^1.1.0"
   },
   "devDependencies": {
     "babel-plugin-external-helpers": "^6.22.0",
