@@ -3,6 +3,10 @@ import { Route, Switch } from 'react-router-dom'
 
 import boot from 'speedstar/boot'
 
+let initial = true
+
+const scroll = () => { window.scrollTo(0, 0) }
+
 class PageLoader extends Component {
   constructor ({ app, page }) {
     super()
@@ -12,10 +16,11 @@ class PageLoader extends Component {
   componentDidMount () {
     const { app, page, pageName, location } = this.props
     if (page && page.name === pageName) {
-      this.setState({ page })
+      this.setState({ page }, initial ? () => {} : scroll)
+      initial = false
     } else {
       boot(app, location.pathname, (page, pageObject) => {
-        this.setState({ page: pageObject })
+        this.setState({ page: pageObject }, scroll)
       })
     }
   }
@@ -24,7 +29,7 @@ class PageLoader extends Component {
     if (location !== this.props.location) {
       this.setState({ page: null })
       boot(app, location.pathname, (page, pageObject) => {
-        this.setState({ page: pageObject })
+        this.setState({ page: pageObject }, scroll)
       })
     }
   }
